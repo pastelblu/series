@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<div class="container">
+    <div class="row">
+        {% for i in drama_list %}
+        <div class="col-md-3 "style="background-color:#475e4d;">
+            <div class="card" style="width: 18rem;">
+  <img src="{{i.img.url}}" class="card-img-top" alt="..." width="100px" height="300px">
+  <div class="card-body" style="background-color:#204b41;border: 1px solid black;">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text"></p>
+    <a href="{% url   'dramaapp:detail' i.id %}" class="btn btn-warning" style="background-color:#d4d4d4;border: 1px solid black;">View details</a>
+  </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
